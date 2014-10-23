@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    
+                    <p:panel header="Cadastro Cliente">
+                        
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Nome"/>
+                            <p:inputText value="#{clienteManagedBean.cliente.nome}" />
+                            <p:outputLabel value="CPF"/>
+                            <p:inputText value="#{clienteManagedBean.cliente.cpf}" />
+                            <p:outputLabel value="Matricula"/>
+                            <p:inputText value="#{clienteManagedBean.cliente.matricula}"/>                
+                            <p:outputLabel value="Endereço"/>
+                            <p:inputText value="#{clienteManagedBean.cliente.endereco}"/>                            
+                        </h:panelGrid>
+                        
+                        <p:commandButton value="Enviar" action="#{clienteManagedBean.salvar()}"/>
+                        
+                    </p:panel>
+                    
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
